@@ -134,13 +134,14 @@ header{
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.345);
     padding: 20px;
     perspective: 1000px;
+    position: relative;
 }
 
 .card {
     width: 330px;
     height: 200px;
     background: linear-gradient(90deg, #008bdb, #4355ad);
-    border-radius: 15px;
+    border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     color: white;
     transform-style: preserve-3d;
@@ -148,16 +149,24 @@ header{
     justify-content: center;
     align-items: center;
     padding: 20px;
+    perspective: 1000px;
+    position: relative;
+}
+
+.card:hover{
+    transform: rotateY(180deg);
 }
 
 .card-front,
 .card-back {
     backface-visibility: hidden;
+    position: absolute;
+    width: 1000%;
+    height: 100%;
 }
 
 .card-holder{
     margin-top: 40px;
-    margin-bottom: -300px;
 }
 
 .card-expiry{
@@ -179,16 +188,19 @@ header{
 
 /* Faixa preta */
 .stripe {
-    width: 100%;
     height: 40px;
     background-color: black;
-    left: 100px;
+    position: relative;
+    top: -40px;
+    margin: 0 -21px;
 }
 
 /* Container do CVV */
 .cvv-container {
     width: 100%;
     display: flex;
+    position: relative;
+    top: -40px;
 }
 
 .cvv-container span {
@@ -203,7 +215,7 @@ header{
 }
 
 
-.card-container:hover .card {
+.card:hover{
     transform: rotateY(180deg);
 }
 
@@ -339,10 +351,9 @@ header{
 /* =============================== Investimentos =============================== */
 
 .investments{
-    padding: 20 4%;
+    padding: 20px 4%;
     height: 700px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;
 }
 
 .section-title-1 h1{
@@ -354,7 +365,6 @@ header{
 
 .section-title-1 span{
     color: rgb(0, 96, 180);
-
 }
 
 .chart-container {
